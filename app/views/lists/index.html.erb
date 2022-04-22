@@ -1,3 +1,7 @@
+<h1>Movie Lists <%= link_to 'add new list', new_list_path, class: "btn btn-info"%></h1>
+
+<ul>
 <% @lists.each do |l| %>
-<div class="card" ><%= l.name.capitalize %></div>
+  <li class="card" ><%= link_to l.name.capitalize, list_path(l) %></li>
 <% end %>
+</ul>

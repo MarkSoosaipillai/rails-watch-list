@@ -1,0 +1,9 @@
+<h1><%= @list.name %></h1>
+<p> <%= "No movies saved" if @list.movies.empty? %></p>
+<% @list.movies.each do |movie| %>
+<div class='card'>
+<%= image_tag movie.poster_url, alt:movie.title, class: 'avatar-bordered m-2' %>
+<h5 class ="my-0 p-2"><%= movie.title%> | Rating: <%= movie.rating %>/10 </h5>
+<p class ="p-2"><%= movie.overview %></p>
+</div>
+<% end %>
