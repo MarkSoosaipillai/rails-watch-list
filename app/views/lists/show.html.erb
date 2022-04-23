@@ -1,9 +1,15 @@
+<div>
 <h1><%= @list.name %></h1>
+<div> <%= link_to 'Add Movies', new_list_bookmark_path %> </div>
+</div>
 <p> <%= "No movies saved" if @list.movies.empty? %></p>
 <% @list.movies.each do |movie| %>
 <div class='card'>
 <%= image_tag movie.poster_url, alt:movie.title, class: 'avatar-bordered m-2' %>
 <h5 class ="my-0 p-2"><%= movie.title%> | Rating: <%= movie.rating %>/10 </h5>
 <p class ="p-2"><%= movie.overview %></p>
+<% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+<%= link_to 'delete', bookmark_path(bookmark), method: :delete, data: { confirm: "You sure?" } %>
 </div>
+
 <% end %>
