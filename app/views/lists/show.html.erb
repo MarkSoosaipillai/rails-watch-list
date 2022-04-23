@@ -1,5 +1,8 @@
 <div>
 <h1><%= @list.name %></h1>
+<% if @list.image.attached? %>
+ <%= cl_image_tag @list.image.key%>
+ <% end %>
 <div> <%= link_to 'Add Movies', new_list_bookmark_path(@list) %> </div>
 </div>
 <p> <%= "No movies saved" if @list.movies.empty? %></p>
@@ -10,7 +13,7 @@
 <p class ="p-2"><%= movie.overview %></p>
 <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
 <%= link_to 'delete', bookmark_path(bookmark), method: :delete, data: { confirm: "You sure?" } %>
-<h3>Comments</h3>
+<h3>Comment</h3>
 <p><%= bookmark.comment %></p>
 </div>
 

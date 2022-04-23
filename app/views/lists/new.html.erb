@@ -1,5 +1,6 @@
 <h3> New List </h3>
 <%= simple_form_for(@list) do |f| %>
   <%= f.input :name, placeholder: 'Action' %>
+  <%= f.input :image, as: :file %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
