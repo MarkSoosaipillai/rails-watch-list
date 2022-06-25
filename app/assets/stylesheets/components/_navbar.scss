@@ -1,12 +1,20 @@
-.navbar-lewagon {
+.navb {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  margin: 0 10px;
+  align-items: center;
+  background-color: $grey;
+  height: 42px;
+  border-bottom: 1px solid $pink;
 }
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.log {
+  color: $pink;
+  font-size: 16px;
 }
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.lin {
+  color: $pink;
+}
+.nav__links{
+  display: flex;
+  gap: 20px;
 }
